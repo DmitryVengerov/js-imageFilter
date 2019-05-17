@@ -38,24 +38,38 @@ function clip(arg, min, max) {
   } else {
     return arg
   }
-  
 }
 
 function quantization(pixel, level) {
-
+    return ((pixel/level) * level)
 }
 
 function reduceBrughtress(level) {
+    console.log(`
+        ${image.values()[1].getRed()}
+        ${image.values()[1].getGreen()}
+        ${image.values()[1].getBlue()}`)
+
+    console.log(`
+        ${quantization(image.values()[1].getRed(), level)}
+        ${quantization(image.values()[1].getGreen(), level)}
+        ${quantization(image.values()[1].getBlue(),level)}`)
+
     for (let pixel of image.values()) {
 
-        let r = ((pixel.getRed()/level) * level)
-        let g = ((pixel.getGreen()/level)* level)
-        let b = ((pixel.getBlue()/level) * level)
+        let r = quantization(pixel.getRed(),level)
+        let g = quantization(pixel.getGreen(),level)
+        let b = quantization(pixel.getBlue(),level) 
 
         pixel.setRed(clip(r, 0, 255));
         pixel.setGreen(clip(g, 0, 255));
         pixel.setBlue(clip(b, 0, 255));
     }
-    let canvas = document.getElementById("cvantovanie");
+    console.log(`
+        ${image.values()[1].getRed()}
+        ${image.values()[1].getGreen()}
+        ${image.values()[1].getBlue()}`)
+
+    let canvas = document.getElementById("quantization");
     image.drawTo(canvas);
 }
