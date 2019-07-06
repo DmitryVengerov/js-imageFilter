@@ -45,16 +45,6 @@ function quantization(pixel, level) {
 }
 
 function reduceBrughtress(level) {
-    console.log(`
-        ${image.values()[1].getRed()}
-        ${image.values()[1].getGreen()}
-        ${image.values()[1].getBlue()}`)
-
-    console.log(`
-        ${quantization(image.values()[1].getRed(), level)}
-        ${quantization(image.values()[1].getGreen(), level)}
-        ${quantization(image.values()[1].getBlue(),level)}`)
-
     for (let pixel of image.values()) {
 
         let r = quantization(pixel.getRed(),level)
@@ -65,10 +55,6 @@ function reduceBrughtress(level) {
         pixel.setGreen(clip(g, 0, 255));
         pixel.setBlue(clip(b, 0, 255));
     }
-    console.log(`
-        ${image.values()[1].getRed()}
-        ${image.values()[1].getGreen()}
-        ${image.values()[1].getBlue()}`)
 
     let canvas = document.getElementById("quantization");
     image.drawTo(canvas);
