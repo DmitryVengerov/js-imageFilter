@@ -1,0 +1,29 @@
+{
+  "name": "js-imagefilter",
+  "version": "1.0.0",
+  "description": "Simple library for workin with image ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmitryVengerov/js-imageFilter.git"
+  },
+  "keywords": [
+    "js",
+    "node",
+    "image",
+    "filter",
+    "png",
+    "jpeg",
+    "bmp",
+    "tiff"
+  ],
+  "author": "Dmitry Vengerov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmitryVengerov/js-imageFilter/issues"
+  },
+  "homepage": "https://github.com/DmitryVengerov/js-imageFilter#readme"
+}
